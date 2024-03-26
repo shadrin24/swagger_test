@@ -29,7 +29,8 @@ return [
             'targets' => [
                 [
                     'class' => \yii\log\FileTarget::class,
-                    'levels' => ['error', 'warning'],
+                    'levels' => ['error', 'warning', 'info'],
+                    'logFile' => '@runtime/logs/info.log',
                 ],
             ],
         ],
@@ -46,4 +47,9 @@ return [
         */
     ],
     'params' => $params,
+    'modules' => [
+        'api' => [
+            'class' => 'frontend\modules\api\Module',
+        ],
+    ],
 ];
